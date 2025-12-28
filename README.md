@@ -1,3 +1,86 @@
+# MediSaver-AI
+
+A Vite + React + TypeScript UI for analyzing health bills with a Supabase backend and edge function.
+
+## Tech stack
+- Frontend: React 18 + TypeScript (Vite)
+- UI: Tailwind CSS, Radix UI, shadcn-style components
+- State & Data: @tanstack/react-query, react-hook-form, zod
+- Backend / Integrations: Supabase (`@supabase/supabase-js`) with an Edge Function in `supabase/functions/analyze-bill`
+- Tooling: Vite, TypeScript, ESLint, PostCSS, Autoprefixer
+
+## Features
+- Upload and analyze medical bills
+- Client-side UI components using Radix and shadcn
+- Server-side / Edge analysis function (Supabase)
+
+## Prerequisites
+- Node.js v18+ (or your preferred Node runtime)
+- npm, pnpm, or bun
+- (Optional) Supabase project and credentials if you want to run the backend function
+
+## Quick start
+1. Clone the repo (if not already):
+
+```bash
+git clone https://github.com/yuvi-097/MediSaver-AI.git
+cd MediSaver-AI
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+# or
+pnpm install
+# or
+bun install
+```
+
+3. Run the dev server:
+
+```bash
+npm run dev
+# or
+pnpm dev
+# or
+bun run dev
+```
+
+4. Open http://localhost:5173 in your browser.
+
+## Environment variables
+Create a `.env` file (or set environment variables) for any Supabase keys used by the app. Typical variables:
+
+- `VITE_SUPABASE_URL`
+- `VITE_SUPABASE_ANON_KEY`
+
+(The app reads Vite-prefixed env vars at build time. Check `src/integrations/supabase/client.ts` for exact names.)
+
+## Supabase Edge Function
+The repository includes a Supabase Edge Function at `supabase/functions/analyze-bill`. To deploy or run it locally, use the Supabase CLI or dashboard:
+
+```bash
+# login (if needed)
+supabase login
+# deploy function
+supabase functions deploy analyze-bill --project-ref your-project-ref
+```
+
+## Build
+
+```bash
+npm run build
+```
+
+## Contributing
+PRs welcome. For quick changes, open an issue first to discuss larger work.
+
+## License
+Specify your license here (e.g., MIT) or remove this section if not applicable.
+
+---
+If you'd like, I can: update the README with screenshots, add CI, or add deployment instructions for Vercel/Netlify. Which would you like next?
 # Welcome to your Lovable project
 
 ## Project info
@@ -7,10 +90,6 @@
 ## How can I edit this code?
 
 There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
 
 Changes made via Lovable will be committed automatically to this repo.
 
@@ -60,14 +139,5 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
-## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
 
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
