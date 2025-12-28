@@ -85,7 +85,7 @@ If you'd like, I can: update the README with screenshots, add CI, or add deploym
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+**URL**: https://preview--health-bill-helper.lovable.app/
 
 ## How can I edit this code?
 
